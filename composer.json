@@ -1,0 +1,19 @@
+{
+    "name": "datascaled/statamic-fathom-stats",
+    "autoload": {
+        "psr-4": {
+            "Datascaled\\StatamicFathomStats\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Fathom Stats",
+            "description": "Statamic Fathom Stats addon"
+        },
+        "laravel": {
+            "providers": [
+                "Datascaled\\StatamicFathomStats\\ServiceProvider"
+            ]
+        }
+    }
+}
