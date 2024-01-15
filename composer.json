@@ -1,8 +1,13 @@
 {
-    "name": "datascaled/statamic-fathom-stats",
+    "name": "datascaled/fathom-stats",
     "autoload": {
         "psr-4": {
-            "Datascaled\\StatamicFathomStats\\": "src"
+            "Datascaled\\FathomStats\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Datascaled\\FathomStats\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -12,12 +17,13 @@
         },
         "laravel": {
             "providers": [
-                "Datascaled\\StatamicFathomStats\\ServiceProvider"
+                "Datascaled\\FathomStats\\ServiceProvider"
             ]
         }
     },
     "require": {
-        "statamic/cms": "^4.44"
+        "php": "^8.0",
+        "statamic/cms": "^4.0"
     },
     "config": {
         "allow-plugins": {
