@@ -3,17 +3,18 @@
 namespace Datascaled\FathomStats;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\PendingRequest;
 
 class Fathom
 {
     public function __construct(
-        protected Http $instance
+        protected ?PendingRequest $instance = null
     ) {
         $this->instance = Http::withToken(
-            config('fathom.api_token')
+            config('statamic.fathom-stats.api_token')
         )
         ->baseUrl(
-            config('fathom.base_url')
+            config('statamic.fathom-stats.base_url')
         )
         ->acceptJson();
     }

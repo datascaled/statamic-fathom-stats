@@ -6,12 +6,8 @@ use Datascaled\FathomStats\Fathom;
 
 class Site extends Fathom
 {
-    public function __construct(
-        protected string $siteId,
-    ) {}
-
-    public function get(): \Illuminate\Http\Client\Response
+    public function get(string $siteId): \Illuminate\Http\Client\Response
     {
-        return $this->instance->get("/sites/$this->siteId");
+        return $this->instance->get("/sites/$siteId");
     }
 }

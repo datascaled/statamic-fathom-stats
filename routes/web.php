@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\VideoController;
-use Datascaled\FathomStats\Http\Controllers\SiteController;
+use Datascaled\FathomStats\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/fathom/sites/{site}', [SiteController::class, 'show']);
+Route::get('/fathom/sites/{site}', [DashboardController::class, 'show']);
