@@ -16,7 +16,7 @@ class Aggregation extends Fathom
         ?string $dateTo = null,
         ?string $sortBy = 'timestamp:desc',
     ): \Illuminate\Http\Client\Response {
-        return $this->instance->get("/aggregations", [
+        return $this->instance->get("/aggregations", array_filter([
             "entity" => $entity,
             "entity_id" => $siteId,
             "aggregates" => $aggregates,
@@ -25,6 +25,6 @@ class Aggregation extends Fathom
             "date_from" => $dateFrom,
             "date_to" => $dateTo,
             "sort_by" => $sortBy,
-        ]);
+        ]));
     }
 }

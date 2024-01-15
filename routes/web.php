@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\VideoController;
-use Datascaled\FathomStats\Http\Controllers\DashboardController;
+use Datascaled\FathomStats\Http\Controllers\AggregationController;
+use Datascaled\FathomStats\Http\Controllers\SitesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/fathom/sites/{site}', [DashboardController::class, 'show']);
+Route::get('/fathom/sites/{site}', [SitesController::class, 'show']);
+Route::get('/fathom/sites/{site}/aggregations', [AggregationController::class, 'index']);
