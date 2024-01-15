@@ -2,6 +2,7 @@
 
 namespace Datascaled\FathomStats;
 
+use Datascaled\FathomStats\Widgets\FathomSite;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
@@ -14,14 +15,20 @@ class ServiceProvider extends AddonServiceProvider
         );
     }
 
-    /**
-     * @var list<class-string<Widget>>
-     */
-    protected $widgets = [
+    protected $viewNamespace = 'datascaled';
 
+    protected $widgets = [
+        FathomSite::class
     ];
 
     protected $routes = [
         'web' => __DIR__ . '/../routes/web.php',
+    ];
+
+    protected $vite = [
+        'input' => [
+            'resources/js/cp.js',
+        ],
+        'publicDirectory' => 'resources/dist',
     ];
 }
