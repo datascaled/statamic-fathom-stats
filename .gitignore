@@ -4,4 +4,4 @@ mix-manifest.json
 .env
 node_modules
 vendor
-resources/dist
+hot

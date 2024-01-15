@@ -4,7 +4,7 @@ namespace Datascaled\FathomStats\Widgets;
 
 use Statamic\Widgets\Widget;
 
-class FathomSite extends Widget
+class FathomStats extends Widget
 {
     /**
      * The HTML that should be shown in the widget.
