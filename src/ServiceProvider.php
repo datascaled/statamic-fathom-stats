@@ -10,4 +10,11 @@ class ServiceProvider extends AddonServiceProvider
     {
         //
     }
+
+    /**
+     * @var list<class-string<Widget>>
+     */
+    protected $widgets = [
+        
+    ];
 }
