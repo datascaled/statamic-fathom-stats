@@ -1,13 +1,9 @@
 {
+    "license": "MIT",
     "name": "datascaled/statamic-fathom-stats",
     "autoload": {
         "psr-4": {
             "Datascaled\\FathomStats\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Datascaled\\FathomStats\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -29,9 +25,5 @@
         "allow-plugins": {
             "pixelfear/composer-dist-plugin": true
         }
-    },
-    "require-dev": {
-        "orchestra/testbench": "^8.20",
-        "phpunit/phpunit": "^10.5"
     }
 }
