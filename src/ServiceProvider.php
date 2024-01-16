@@ -2,8 +2,10 @@
 
 namespace Datascaled\FathomStats;
 
-use Datascaled\FathomStats\Widgets\FathomStats;
+use Datascaled\FathomStats\Widgets\Footer;
 use Statamic\Providers\AddonServiceProvider;
+use Datascaled\FathomStats\Widgets\Pageviews;
+use Datascaled\FathomStats\Widgets\ViewsPerDevice;
 
 class ServiceProvider extends AddonServiceProvider
 {
@@ -18,7 +20,9 @@ class ServiceProvider extends AddonServiceProvider
     protected $viewNamespace = 'datascaled';
 
     protected $widgets = [
-        FathomStats::class
+        Pageviews::class,
+        ViewsPerDevice::class,
+        Footer::class
     ];
 
     protected $routes = [

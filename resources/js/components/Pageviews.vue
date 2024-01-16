@@ -32,7 +32,7 @@ export default {
     this.$axios
       .get(`/fathom/sites/${this.siteId}/aggregations`, {
         params: {
-          days: 14,
+          days: 30,
         },
       })
       .then((res) => {

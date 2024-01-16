@@ -3,9 +3,8 @@
     <template v-slot:default="{ defaultOptions }">
       <ApexChart
         ref="chart"
-        type="pie"
-        height="350"
-        v-bind="{ options: { ...defaultOptions, xaxis }, series }"
+        type="donut"
+        v-bind="{ options: { ...defaultOptions, labels }, series }"
       />
     </template>
   </ChartWrapper>
@@ -17,31 +16,28 @@ export default {
   props: ["siteId"],
   data() {
     return {
-      xaxis: {
-        type: "datetime",
-      },
-      series: [
-        {
-          name: "",
-          data: [],
-        },
-      ],
+      series: [],
+      labels: [],
     };
   },
   created() {
     this.$axios
       .get(`/fathom/sites/${this.siteId}/aggregations`, {
         params: {
-          days: 14,
-          group_by: 'device',
+          days: 30,
+          field_grouping: "device_type",
         },
       })
       .then((res) => {
         res.data.forEach((stat) => {
-          this.series[0].data.push({
-            x: new Date(stat.date).getTime(),
-            y: stat.pageviews,
-          });
+          if (!this.labels.includes(stat.device_type)) {
+            this.labels.push(stat.device_type);
+            this.series.push(0);
+          }
+
+          this.series[this.labels.indexOf(stat.device_type)] += parseInt(
+            stat.pageviews
+          );
         });
       })
       .finally(() => {
