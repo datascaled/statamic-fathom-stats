@@ -1,4 +1,4 @@
-<div class="card p-0 overflow-hidden h-full">
+<div class="card p-0 overflow-hidden">
     <div class="flex justify-between items-center p-4">
         <h2>
             <div class="flex items-center">
@@ -14,8 +14,8 @@
             </div>
         </h2>
     </div>
-    <div class="content px-4 pb-4">
-        <fathom-stats site-id="{{ config('statamic.fathom-stats.site_id') }}" />
+    <div class="content px-4">
+        <page-views site-id="{{ config('statamic.fathom-stats.site_id') }}" />
     </div>
 </div>
 <div class="text-center text-xs p-4">

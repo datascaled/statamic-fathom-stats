@@ -3,7 +3,7 @@
     <template v-slot:default="{ defaultOptions }">
       <ApexChart
         ref="chart"
-        type="area"
+        type="pie"
         height="350"
         v-bind="{ options: { ...defaultOptions, xaxis }, series }"
       />
@@ -33,6 +33,7 @@ export default {
       .get(`/fathom/sites/${this.siteId}/aggregations`, {
         params: {
           days: 14,
+          group_by: 'device',
         },
       })
       .then((res) => {

@@ -1,16 +1,12 @@
 <template>
   <div>
-    <Pageviews v-bind="{ siteId, defaultOptions }" />
+    <slot v-bind="{ defaultOptions }" />
   </div>
 </template>
 
 <script>
-import Pageviews from "./Pageviews.vue";
-
 export default {
   name: "FathomStats",
-  props: ["siteId"],
-  components: { Pageviews },
   data() {
     return {
       defaultOptions: {
