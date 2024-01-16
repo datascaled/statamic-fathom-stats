@@ -31,3 +31,24 @@ Add the following values to your env file
 FATHOM_API_TOKEN=
 FATHOM_SITE_ID=
 ```
+
+Add the widgets to config/statamic/cp.php
+
+``` php
+[
+    'type' => 'pageviews',
+    'width' => 100,
+],
+[
+    'type' => 'views_per_device',
+    'width' => 50,
+],
+[
+    'type' => 'views_per_page',
+    'width' => 50,
+],
+[
+    'type' => 'footer',
+    'width' => 100,
+],
+```
