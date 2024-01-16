@@ -7,14 +7,9 @@ use Statamic\Providers\AddonServiceProvider;
 use Datascaled\FathomStats\Widgets\Pageviews;
 use Datascaled\FathomStats\Widgets\ViewsPerPage;
 use Datascaled\FathomStats\Widgets\ViewsPerDevice;
-use Datascaled\FathomStats\Console\Commands\Install;
 
 class ServiceProvider extends AddonServiceProvider
 {
-    protected $commands = [
-        Install::class
-    ];
-
     public function bootAddon()
     {
         $this->publishes(

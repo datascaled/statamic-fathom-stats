@@ -22,7 +22,7 @@ composer require datascaled/statamic-fathom-stats
 ```
 
 ``` bash
-php please fathom-stats:install
+php artisan vendor:publish --tag="statamic-fathom-stats-config"
 ```
 
 Add the following values to your env file
