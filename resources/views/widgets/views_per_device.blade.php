@@ -1,4 +1,4 @@
-<div class="card p-0 overflow-hidden">
+<div class="card p-0 overflow-hidden h-full">
     <div class="flex justify-between items-center p-4">
         <h2>
             <div class="flex items-center">
