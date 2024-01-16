@@ -1,5 +1,5 @@
 {
-    "name": "datascaled/fathom-stats",
+    "name": "datascaled/statamic-fathom-stats",
     "autoload": {
         "psr-4": {
             "Datascaled\\FathomStats\\": "src/"
