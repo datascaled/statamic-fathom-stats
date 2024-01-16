@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Datascaled\FathomStats\Console\Commands;
 
 use Illuminate\Console\Command;
 use Statamic\Console\RunsInPlease;
 
-class FathomStatsInstall extends Command
+class Install extends Command
 {
     use RunsInPlease;
     /**
