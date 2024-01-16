@@ -1,1 +1,0 @@
-{"version":1,"defects":{"Datascaled\\FathomStats\\Tests\\Feature\\SiteTest::it_fetches_pages":7},"times":{"Datascaled\\FathomStats\\Tests\\Feature\\InitialTest::it_boots":0.016,"Datascaled\\FathomStats\\Tests\\Feature\\SiteTest::it_fetches_pages":0.03}}
