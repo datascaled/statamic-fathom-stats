@@ -14,9 +14,13 @@ export default {
   data() {
     return {
       defaultOptions: {
+        chart: {
+          toolbar: {
+            show: false,
+          },
+        },
         theme: {
           mode: "light",
-          palette: "palette9",
           monochrome: {
             enabled: true,
             color: "#333740",
