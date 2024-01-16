@@ -1,8 +1,9 @@
 name: Update Packagist
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - master
 
 jobs:
   update-packagist:
