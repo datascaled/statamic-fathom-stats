@@ -1,23 +1,31 @@
 # Statamic Fathom Stats
 
-> Statamic Fathom Stats is a Statamic addon that does something pretty neat.
+> Statamic Fathom Stats is a Statamic addon that adds widgets for the dashboard.
 
 ## Features
 
-This addon does:
+This addon provides the following widgets:
 
-- This
-- And this
-- And even this
+- Pageviews
+- Views per device
+- Views per page
+- Footer
 
 ## How to Install
 
 You can search for this addon in the `Tools > Addons` section of the Statamic control panel and click **install**, or run the following command from your project root:
 
 ``` bash
-composer require datascaled/fathom-stats
+composer require datascaled/statamic-fathom-stats
 ```
 
-## How to Use
+``` bash
+php please fathom-stats:install
+```
 
-Here's where you can explain how to use this wonderful addon.
+Add the following values to your env file
+
+``` env
+FATHOM_API_TOKEN=
+FATHOM_SITE_ID=
+```
