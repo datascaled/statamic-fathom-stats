@@ -2,6 +2,7 @@
   <ChartWrapper>
     <template v-slot:default="{ defaultOptions }">
       <ApexChart
+        class="pb-2"
         ref="chart"
         type="donut"
         v-bind="{ options: { ...defaultOptions, labels }, series }"
