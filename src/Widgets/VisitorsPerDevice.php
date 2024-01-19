@@ -4,7 +4,7 @@ namespace Datascaled\FathomStats\Widgets;
 
 use Statamic\Widgets\Widget;
 
-class ViewsPerPage extends Widget
+class VisitorsPerDevice extends Widget
 {
     /**
      * The HTML that should be shown in the widget.
@@ -13,6 +13,6 @@ class ViewsPerPage extends Widget
      */
     public function html()
     {
-        return view('datascaled::widgets.views_per_page');
+        return view('datascaled::widgets.visitors_per_device');
     }
 }

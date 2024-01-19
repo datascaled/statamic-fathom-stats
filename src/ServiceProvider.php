@@ -2,11 +2,12 @@
 
 namespace Datascaled\FathomStats;
 
+use InvalidArgumentException;
 use Datascaled\FathomStats\Widgets\Footer;
 use Statamic\Providers\AddonServiceProvider;
-use Datascaled\FathomStats\Widgets\Pageviews;
-use Datascaled\FathomStats\Widgets\ViewsPerPage;
-use Datascaled\FathomStats\Widgets\ViewsPerDevice;
+use Datascaled\FathomStats\Widgets\VisitorsPerPage;
+use Datascaled\FathomStats\Widgets\VisitorsPerDevice;
+use Datascaled\FathomStats\Widgets\GeneralStatistics;
 
 class ServiceProvider extends AddonServiceProvider
 {
@@ -16,14 +17,20 @@ class ServiceProvider extends AddonServiceProvider
             [__DIR__ . '/../config/fathom-stats.php' => config_path('statamic/fathom-stats.php')],
             'statamic-fathom-stats-config'
         );
+
+        foreach (['site_id', 'api_token', 'base_url'] as $key) {
+            if (!config("statamic.fathom-stats.$key")) {
+                throw new InvalidArgumentException("Missing config value: $key");
+            }
+        }
     }
 
     protected $viewNamespace = 'datascaled';
 
     protected $widgets = [
-        Pageviews::class,
-        ViewsPerPage::class,
-        ViewsPerDevice::class,
+        GeneralStatistics::class,
+        VisitorsPerPage::class,
+        VisitorsPerDevice::class,
         Footer::class,
     ];
 

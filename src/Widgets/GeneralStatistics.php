@@ -4,7 +4,7 @@ namespace Datascaled\FathomStats\Widgets;
 
 use Statamic\Widgets\Widget;
 
-class Pageviews extends Widget
+class GeneralStatistics extends Widget
 {
     /**
      * The HTML that should be shown in the widget.
@@ -13,6 +13,6 @@ class Pageviews extends Widget
      */
     public function html()
     {
-        return view('datascaled::widgets.pageviews');
+        return view('datascaled::widgets.general_statistics');
     }
 }

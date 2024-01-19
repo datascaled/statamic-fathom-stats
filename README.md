@@ -36,15 +36,15 @@ Add the widgets to config/statamic/cp.php
 
 ``` php
 [
-    'type' => 'pageviews',
+    'type' => 'general_statistics',
     'width' => 100,
 ],
 [
-    'type' => 'views_per_device',
+    'type' => 'visitors_per_device',
     'width' => 50,
 ],
 [
-    'type' => 'views_per_page',
+    'type' => 'visitors_per_page',
     'width' => 50,
 ],
 [
@@ -52,3 +52,16 @@ Add the widgets to config/statamic/cp.php
     'width' => 100,
 ],
 ```
+
+Add the translations to your lang/locale.json if the locale isn't "en"
+
+``` json
+    "Visitor": "Besucher",
+    "Phone": "Telefon",
+    "Desktop": "Desktop",
+    "Page views": "Seitenaufrufe",
+    "Unique visitors": "Individuelle Besucher",
+    "Average duration on site": "Durchschnittliche Zeit auf der Seite"
+```
+
+Made with ❤️ in Zurich by [Datascale](https://datascale.ch)

@@ -68,18 +68,19 @@ export default {
           days: 30,
           field_grouping: "pathname",
           date_grouping: "year",
-          sort_by: "pageviews:desc",
+          sort_by: "visits:desc",
+          aggregates: "visits",
         },
       })
       .then((res) => {
-        res.data.splice(0, 4).forEach(({ pathname, pageviews }) => {
+        res.data.splice(0, 4).forEach(({ pathname, visits }) => {
           if (!this.xaxis.categories.includes(pathname)) {
             this.xaxis.categories.push(pathname);
             this.series[0].data.push(0);
           }
 
           this.series[0].data[this.xaxis.categories.indexOf(pathname)] +=
-            parseInt(pageviews);
+            parseInt(visits);
         });
       })
       .finally(() => {

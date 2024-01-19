@@ -4,6 +4,6 @@ return [
     'more-stats' => 'Do you need more stats?',
     'page_visits' => 'Page visits',
     'visit' => 'Visit',
-    'views_per_device' => 'Pageviews per device',
-    'views_per_page' => 'Pageviews per page',
+    'visitors_per_device' => 'Visitors per device',
+    'visitors_per_page' => 'Visitors per page',
 ];
