@@ -9,9 +9,16 @@
 This addon provides the following widgets:
 
 - Pageviews
-- Views per device
-- Views per page
+- Visitors per device
+- Visitors per page
+- Average duration on site
 - Footer
+
+## There's more 🚀
+
+- Fully translateable
+- Each widget is optional
+- Each widget allows a custom amount of days
 
 ## How to Install
 
@@ -71,5 +78,10 @@ Add the translations to your lang/locale.json if the locale isn't "en"
     "Unique visitors": "Individuelle Besucher",
     "Seconds": "Sekunden"
 ```
+
+
+## Important notice
+
+Since the API is early access and Fathom has set a throttling of 10 requests per minute, we have decided not to provide any filters.
 
 Made with ❤️ in Zurich by [Datascale](https://datascale.ch)
