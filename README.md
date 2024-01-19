@@ -37,15 +37,23 @@ Add the widgets to config/statamic/cp.php
 ``` php
 [
     'type' => 'general_statistics',
+    'days' => 30
     'width' => 100,
 ],
 [
     'type' => 'visitors_per_device',
+    'days' => 30
     'width' => 50,
 ],
 [
     'type' => 'visitors_per_page',
+    'days' => 30
     'width' => 50,
+],
+[
+    'type' => 'average_duration',
+    'days' => 30
+    'width' => 100,
 ],
 [
     'type' => 'footer',
@@ -61,7 +69,7 @@ Add the translations to your lang/locale.json if the locale isn't "en"
     "Desktop": "Desktop",
     "Page views": "Seitenaufrufe",
     "Unique visitors": "Individuelle Besucher",
-    "Average duration on site": "Durchschnittliche Zeit auf der Seite"
+    "Seconds": "Sekunden"
 ```
 
 Made with ❤️ in Zurich by [Datascale](https://datascale.ch)

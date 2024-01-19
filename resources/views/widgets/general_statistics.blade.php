@@ -15,6 +15,6 @@
         </h2>
     </div>
     <div class="content px-4">
-        <general-statistics site-id="{{ config('statamic.fathom-stats.site_id') }}" locale="{{ config('app.locale') }}" />
+        <general-statistics site-id="{{ config('statamic.fathom-stats.site_id') }}" locale="{{ config('app.locale') }}" days="{{ $days }}" />
     </div>
 </div>

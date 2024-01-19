@@ -2,6 +2,7 @@
 
 namespace Datascaled\FathomStats\Widgets;
 
+use Illuminate\Support\Arr;
 use Statamic\Widgets\Widget;
 
 class GeneralStatistics extends Widget
@@ -13,6 +14,6 @@ class GeneralStatistics extends Widget
      */
     public function html()
     {
-        return view('datascaled::widgets.general_statistics');
+        return view('datascaled::widgets.general_statistics', ['days' => Arr::get($this->config, 'days', 30)]);
     }
 }

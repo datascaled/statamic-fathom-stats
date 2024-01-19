@@ -2,6 +2,7 @@
 
 namespace Datascaled\FathomStats\Widgets;
 
+use Illuminate\Support\Arr;
 use Statamic\Widgets\Widget;
 
 class VisitorsPerPage extends Widget
@@ -13,6 +14,6 @@ class VisitorsPerPage extends Widget
      */
     public function html()
     {
-        return view('datascaled::widgets.visitors_per_page');
+        return view('datascaled::widgets.visitors_per_page', ['days' => Arr::get($this->config, 'days', 30)]);
     }
 }

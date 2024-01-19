@@ -2,6 +2,7 @@
 
 namespace Datascaled\FathomStats;
 
+use Datascaled\FathomStats\Widgets\AverageDuration;
 use InvalidArgumentException;
 use Datascaled\FathomStats\Widgets\Footer;
 use Statamic\Providers\AddonServiceProvider;
@@ -31,6 +32,7 @@ class ServiceProvider extends AddonServiceProvider
         GeneralStatistics::class,
         VisitorsPerPage::class,
         VisitorsPerDevice::class,
+        AverageDuration::class,
         Footer::class,
     ];
 

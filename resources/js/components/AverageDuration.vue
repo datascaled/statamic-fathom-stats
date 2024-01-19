@@ -27,45 +27,27 @@ export default {
     };
   },
   methods: {
-    fetchPageViews() {
+    fetchAverageDuration() {
       return this.$axios
         .get(`/fathom/sites/${this.siteId}/aggregations`, {
           params: {
             days: this.days,
-            aggregates: "pageviews",
+            aggregates: "avg_duration",
           },
         })
         .then((res) => {
           this.series.push({
-            name: this.translate("Page views"),
+            name: this.translate("Seconds"),
             data: res.data.map((stat) => ({
               x: new Date(stat.date).getTime(),
-              y: stat.pageviews,
-            })),
-          });
-        });
-    },
-    fetchVisitors() {
-      return this.$axios
-        .get(`/fathom/sites/${this.siteId}/aggregations`, {
-          params: {
-            days: this.days,
-            aggregates: "visits",
-          },
-        })
-        .then((res) => {
-          this.series.push({
-            name: this.translate("Unique visitors"),
-            data: res.data.map((stat) => ({
-              x: new Date(stat.date).getTime(),
-              y: stat.visits,
+              y: Math.floor(stat.avg_duration),
             })),
           });
         });
     },
   },
   created() {
-    Promise.all([this.fetchPageViews(), this.fetchVisitors()]).finally(() => {
+    Promise.all([this.fetchAverageDuration()]).finally(() => {
       if (this.locale) {
         this.$refs.chart.setLocale(this.locale);
       }

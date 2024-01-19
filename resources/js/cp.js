@@ -1,6 +1,7 @@
 import GeneralStatistics from "./components/GeneralStatistics.vue";
 import VisitorsPerDevice from "./components/VisitorsPerDevice.vue";
 import VisitorsPerPage from "./components/VisitorsPerPage.vue";
+import AverageDuration from "./components/AverageDuration.vue";
 import ChartWrapper from "./components/ChartWrapper.vue";
 import VueApexCharts from "vue-apexcharts";
 
@@ -12,4 +13,5 @@ Statamic.booting(() => {
   Statamic.$components.register("ChartWrapper", ChartWrapper);
   Statamic.$components.register("VisitorsPerDevice", VisitorsPerDevice);
   Statamic.$components.register("VisitorsPerPage", VisitorsPerPage);
+  Statamic.$components.register("AverageDuration", AverageDuration);
 });

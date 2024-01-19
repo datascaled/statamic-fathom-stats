@@ -47,7 +47,7 @@
 <script>
 export default {
   name: "FathomStats",
-  props: ["siteId"],
+  props: ["siteId", "days"],
   data() {
     return {
       series: [
@@ -65,7 +65,7 @@ export default {
     this.$axios
       .get(`/fathom/sites/${this.siteId}/aggregations`, {
         params: {
-          days: 30,
+          days: this.days,
           field_grouping: "pathname",
           date_grouping: "year",
           sort_by: "visits:desc",
