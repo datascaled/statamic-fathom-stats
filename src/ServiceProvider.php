@@ -3,7 +3,6 @@
 namespace Datascaled\FathomStats;
 
 use Datascaled\FathomStats\Widgets\AverageDuration;
-use InvalidArgumentException;
 use Datascaled\FathomStats\Widgets\Footer;
 use Statamic\Providers\AddonServiceProvider;
 use Datascaled\FathomStats\Widgets\VisitorsPerPage;
@@ -18,12 +17,6 @@ class ServiceProvider extends AddonServiceProvider
             [__DIR__ . '/../config/fathom-stats.php' => config_path('statamic/fathom-stats.php')],
             'statamic-fathom-stats-config'
         );
-
-        foreach (['site_id', 'api_token', 'base_url'] as $key) {
-            if (!config("statamic.fathom-stats.$key")) {
-                throw new InvalidArgumentException("Missing config value: $key");
-            }
-        }
     }
 
     protected $viewNamespace = 'datascaled';

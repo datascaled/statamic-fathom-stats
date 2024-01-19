@@ -2,10 +2,9 @@
 
 namespace Datascaled\FathomStats\Widgets;
 
-use Illuminate\Support\Arr;
-use Statamic\Widgets\Widget;
+use Datascaled\FathomStats\Widgets\BaseWidget;
 
-class AverageDuration extends Widget
+class AverageDuration extends BaseWidget
 {
     /**
      * The HTML that should be shown in the widget.
@@ -14,6 +13,6 @@ class AverageDuration extends Widget
      */
     public function html()
     {
-        return view('datascaled::widgets.average_duration', ['days' => Arr::get($this->config, 'days', 30)]);
+        return view('datascaled::widgets.average_duration', ['days' => $this->days]);
     }
 }
