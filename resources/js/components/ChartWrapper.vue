@@ -13,6 +13,9 @@ export default {
   data() {
     return {
       defaultOptions: {
+        stroke: {
+          curve: "straight",
+        },
         chart: {
           toolbar: {
             show: false,
