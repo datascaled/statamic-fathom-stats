@@ -44,22 +44,22 @@ Add the widgets to config/statamic/cp.php
 ``` php
 [
     'type' => 'general_statistics',
-    'days' => 30
+    'days' => 30,
     'width' => 100,
 ],
 [
     'type' => 'visitors_per_device',
-    'days' => 30
+    'days' => 30,
     'width' => 50,
 ],
 [
     'type' => 'visitors_per_page',
-    'days' => 30
+    'days' => 30,
     'width' => 50,
 ],
 [
     'type' => 'average_duration',
-    'days' => 30
+    'days' => 30,
     'width' => 100,
 ],
 [
