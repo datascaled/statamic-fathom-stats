@@ -13,6 +13,6 @@ class GeneralStatistics extends BaseWidget
      */
     public function html()
     {
-        return view('datascaled::widgets.general_statistics', ['days' => $this->days]);
+        return view('statamic-fathom-stats::widgets.general_statistics', ['days' => $this->days]);
     }
 }

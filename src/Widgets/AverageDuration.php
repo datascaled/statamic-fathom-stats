@@ -13,6 +13,6 @@ class AverageDuration extends BaseWidget
      */
     public function html()
     {
-        return view('datascaled::widgets.average_duration', ['days' => $this->days]);
+        return view('statamic-fathom-stats::widgets.average_duration', ['days' => $this->days]);
     }
 }

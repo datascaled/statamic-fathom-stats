@@ -13,6 +13,6 @@ class VisitorsPerPage extends BaseWidget
      */
     public function html()
     {
-        return view('datascaled::widgets.visitors_per_page', ['days' => $this->days]);
+        return view('statamic-fathom-stats::widgets.visitors_per_page', ['days' => $this->days]);
     }
 }

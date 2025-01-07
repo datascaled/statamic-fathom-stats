@@ -13,6 +13,6 @@ class Footer extends Widget
      */
     public function html()
     {
-        return view('datascaled::widgets.footer');
+        return view('statamic-fathom-stats::widgets.footer');
     }
 }

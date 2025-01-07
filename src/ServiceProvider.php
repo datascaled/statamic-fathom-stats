@@ -17,9 +17,12 @@ class ServiceProvider extends AddonServiceProvider
             [__DIR__ . '/../config/fathom-stats.php' => config_path('statamic/fathom-stats.php')],
             'statamic-fathom-stats-config'
         );
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views/', 'statamic-fathom-stats');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang/', 'statamic-fathom-stats');
     }
 
-    protected $viewNamespace = 'datascaled';
+    protected $viewNamespace = 'statamic-fathom-stats';
 
     protected $widgets = [
         GeneralStatistics::class,
