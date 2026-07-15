@@ -37,7 +37,9 @@ export default {
         })
         .then((res) => {
           this.series.push({
-            name: this.translate("Page views"),
+            name: this.__(
+              "statamic-fathom-stats::fathom-stats.page_views"
+            ),
             data: res.data.map((stat) => ({
               x: new Date(stat.date).getTime(),
               y: stat.pageviews,
@@ -55,7 +57,9 @@ export default {
         })
         .then((res) => {
           this.series.push({
-            name: this.translate("Unique visitors"),
+            name: this.__(
+              "statamic-fathom-stats::fathom-stats.unique_visitors"
+            ),
             data: res.data.map((stat) => ({
               x: new Date(stat.date).getTime(),
               y: stat.visits,
@@ -69,7 +73,6 @@ export default {
       if (this.locale) {
         this.$refs.chart.setLocale(this.locale);
       }
-      this.$refs.chart.refresh();
     });
   },
 };

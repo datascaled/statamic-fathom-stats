@@ -37,7 +37,7 @@ export default {
         })
         .then((res) => {
           this.series.push({
-            name: this.translate("Seconds"),
+            name: this.__("statamic-fathom-stats::fathom-stats.seconds"),
             data: res.data.map((stat) => ({
               x: new Date(stat.date).getTime(),
               y: Math.floor(stat.avg_duration),
@@ -51,7 +51,6 @@ export default {
       if (this.locale) {
         this.$refs.chart.setLocale(this.locale);
       }
-      this.$refs.chart.refresh();
     });
   },
 };

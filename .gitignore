@@ -1,7 +1,6 @@
 node_modules
+.pnpm-store
 vendor
 mix-manifest.json
 .env
-node_modules
-vendor
 hot

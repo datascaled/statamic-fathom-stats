@@ -4,7 +4,6 @@ namespace Datascaled\FathomStats\Http\Controllers;
 
 use Datascaled\FathomStats\Aggregation;
 use Illuminate\Support\Carbon;
-use Datascaled\FathomStats\Site;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cache;
@@ -13,8 +12,14 @@ class AggregationController extends Controller
 {
     public function index(string $site): JsonResponse
     {
-        return Cache::remember(
-            'fathom-site-' . $site . '-aggregations-' . json_encode(request()->all()),
+        $query = request()->query();
+        ksort($query);
+
+        $cacheKey = 'fathom-stats:v2:site:' . $site . ':aggregations:'
+            . hash('sha256', json_encode($query, JSON_THROW_ON_ERROR));
+
+        $response = Cache::remember(
+            $cacheKey,
             Carbon::now()->addMinute(),
             function () use ($site) {
                 $data = (new Aggregation())
@@ -29,11 +34,13 @@ class AggregationController extends Controller
                         sortBy: request()->input('sort_by', 'timestamp:asc'),
                     );
 
-                return new JsonResponse(
-                    $data->json(),
-                    $data->status()
-                );
+                return [
+                    'data' => $data->json(),
+                    'status' => $data->status(),
+                ];
             }
         );
+
+        return new JsonResponse($response['data'], $response['status']);
     }
 }

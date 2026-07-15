@@ -82,9 +82,6 @@ export default {
           this.series[0].data[this.xaxis.categories.indexOf(pathname)] +=
             parseInt(visits);
         });
-      })
-      .finally(() => {
-        this.$refs.chart.refresh();
       });
   },
 };

@@ -1,0 +1,13 @@
+minimumReleaseAge: 10080
+
+minimumReleaseAgeStrict: true
+
+minimumReleaseAgeIgnoreMissingTime: false
+
+blockExoticSubdeps: true
+
+trustPolicy: no-downgrade
+
+trustPolicyIgnoreAfter: 525600
+
+allowBuilds: { esbuild: true, puppeteer: true }

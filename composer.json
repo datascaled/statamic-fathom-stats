@@ -1,6 +1,7 @@
 {
     "license": "MIT",
     "name": "datascaled/statamic-fathom-stats",
+    "description": "Statamic dashboard widgets for Fathom Analytics.",
     "autoload": {
         "psr-4": {
             "Datascaled\\FathomStats\\": "src/"
@@ -18,10 +19,13 @@
         }
     },
     "require": {
-        "php": "^8.0",
-        "statamic/cms": "^4.0 || ^5.0"
+        "php": "^8.3",
+        "statamic/cms": "^6.0"
     },
     "config": {
+        "platform": {
+            "php": "8.3.0"
+        },
         "allow-plugins": {
             "pixelfear/composer-dist-plugin": true
         }

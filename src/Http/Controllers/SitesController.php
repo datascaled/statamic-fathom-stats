@@ -2,7 +2,6 @@
 
 namespace Datascaled\FathomStats\Http\Controllers;
 
-use Datascaled\FathomStats\Aggregation;
 use Illuminate\Support\Carbon;
 use Datascaled\FathomStats\Site;
 use Illuminate\Http\JsonResponse;
@@ -13,10 +12,19 @@ class SitesController extends Controller
 {
     public function show(?string $site = null): JsonResponse
     {
-        $data = Cache::remember('fathom-site-' . $site, Carbon::now()->addDay(), function () use ($site) {
-            return (new Site())->get($site);
-        });
+        $response = Cache::remember(
+            'fathom-stats:v2:site:' . $site,
+            Carbon::now()->addDay(),
+            function () use ($site) {
+                $data = (new Site())->get($site);
 
-        return new JsonResponse($data->json(), $data->status());
+                return [
+                    'data' => $data->json(),
+                    'status' => $data->status(),
+                ];
+            }
+        );
+
+        return new JsonResponse($response['data'], $response['status']);
     }
 }
