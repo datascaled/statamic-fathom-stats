@@ -75,10 +75,6 @@ Add the widgets to the `widgets` array in `config/statamic/cp.php`:
 ],
 ```
 
-## Important notice
-
-Since the API is early access and Fathom has set a throttling of 10 requests per minute, we have decided not to provide any filters.
-
 ## Sponsor
 
 Development of this addon is sponsored by [Lua](https://lua.ch).
